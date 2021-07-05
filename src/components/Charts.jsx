@@ -1,9 +1,16 @@
 import React from "react";
 import Chart from "./Chart";
 
-const Charts = ({ coinData }) => {
+const Charts = ({ coinData, coin, handleChange }) => {
   return (
     <div className="charts">
+        <div>
+          <select value={coin} onChange={handleChange} >
+            <option value="bitcoin">Bitcoin</option>
+            <option value="litecoin">Litecoin</option>
+            <option value="ethereum">Ethereum</option>
+          </select>
+          </div>
       {coinData.map(coin => (
         <div className="chart__container" key={coin.name}>
           <h2 className="coin__title">{coin.name}</h2>
